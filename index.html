@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oguzhan Kilic Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE  work: an engineer's build record, shown to recruiters
+   IDEA   a workshop build log: real parts, real photos, figures stamped like part labels
+   PICTURE the demolded carbon fuselage beside the satellite cutaway, full bleed on carbon black
+   COLOUR carbon #111214 ground band, white sheets, satellite red #d91f26 as the one accent
+   TYPE   Archivo 800 for titles + Inter for text
+   LAYOUT hero band: name + facts left, two pictures right; then one band per project, photo strips full width */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0f1012);--ink:light-dark(#121316,#eceef1);--mute:light-dark(#5a5f68,#a3a8b1);--line:light-dark(#e3e5e9,#2a2d33);--panel:light-dark(#f4f5f7,#17191c);--red:#d91f26;--carbon:#111214}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em;line-height:1.05;margin:0}
+h1{font-size:clamp(36px,5vw,56px);font-weight:800}
+h2{font-size:clamp(28px,3.4vw,40px);font-weight:800}
+h3{font-size:20px;font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(32px,4.5vw,72px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+nav{position:sticky;top:0;z-index:5;background:var(--carbon);color:#fff;border-bottom:1px solid #26282d}
+nav .wrap{display:flex;flex-wrap:wrap;gap:4px 22px;align-items:center;padding:12px max(5vw,16px)}
+nav b{font-family:Archivo,sans-serif;font-weight:800;margin-right:auto}
+nav a{text-decoration:none;color:#c9ccd2;font-size:15px;padding:6px 0}
+nav a:hover,nav a:focus-visible{color:#fff;outline:none;box-shadow:0 2px 0 var(--red)}
+.hero{background:var(--carbon);color:#fff}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);align-items:stretch}
+.lede{color:#c9ccd2;font-size:17px;margin-top:16px;max-width:34em}
+.role{color:#fff;font-size:18px;font-weight:600;margin-top:12px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:#2a2d33;margin-top:28px;border:1px solid #2a2d33}
+.facts div{background:var(--carbon);padding:14px 16px}
+.facts strong{display:block;font-family:Archivo,sans-serif;font-size:clamp(24px,2.6vw,32px);font-weight:800;color:#fff;white-space:nowrap}
+.facts span{color:#a3a8b1;font-size:14px}
+.contact{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px 20px;font-size:15px;color:#c9ccd2}
+.contact a{color:#fff;text-decoration-color:var(--red);text-underline-offset:3px}
+.pics{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:12px}
+.pics figure{margin:0;position:relative;overflow:hidden;background:#1b1d21}
+.pics img{width:100%;height:100%;object-fit:cover}
+.pics .sat{background:#e9eaec}
+.pics .sat img{object-fit:contain}
+.tag{position:absolute;left:10px;bottom:10px;background:rgba(17,18,20,.86);color:#fff;font-size:13px;padding:4px 9px}
+.head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,4vw,56px);align-items:end;margin-bottom:28px}
+.head p{color:var(--mute);font-size:17px}
+.meta{color:var(--red);font-weight:600;font-size:15px;margin-bottom:10px}
+.step{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:clamp(16px,3vw,40px);padding-block:22px;border-top:1px solid var(--line)}
+.step p{color:var(--mute);font-size:15px;margin-top:6px}
+.strip{overflow-x:auto;background:var(--panel)}
+.strip img{width:100%;min-width:640px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ph{margin:0;background:var(--panel)}
+.ph img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.ph.wide img{aspect-ratio:16/10}
+.ph.render img{object-fit:contain;background:#e9eaec}
+figcaption{font-size:14px;color:var(--mute);padding:8px 2px 0}
+figcaption b{color:var(--ink);font-weight:600}
+.alt{background:var(--panel)}
+.alt .ph{background:var(--bg)}
+.story{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:28px}
+.card{background:var(--bg);border:1px solid var(--line);padding:20px}
+.card p{color:var(--mute);font-size:15px;margin-top:8px}
+.card .n{font-family:Archivo,sans-serif;font-weight:800;color:var(--red);font-size:15px}
+.more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+footer{background:var(--carbon);color:#c9ccd2}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center}
+footer h2{color:#fff}
+footer a{color:#fff;text-decoration-color:var(--red);text-underline-offset:3px}
+@media(max-width:900px){.hero .wrap,.head{grid-template-columns:minmax(0,1fr)}.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.step{grid-template-columns:minmax(0,1fr)}.grid3,.story,.more{grid-template-columns:minmax(0,1fr)}.pics{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}nav a{font-size:14px}}
+@media(prefers-reduced-motion:no-preference){.pics img{transition:transform .6s ease}.pics figure:hover img{transform:scale(1.03)}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Oğuzhan Kılıç</b><a href="#uav">UAV</a><a href="#satellite">Satellite</a><a href="#rocket">Rocket</a><a href="#more">More</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero band">
+  <div class="wrap">
+    <div>
+      <h1>Oğuzhan Kılıç</h1>
+      <p class="role">Mechanical engineer · composites, UAV and space hardware</p>
+      <p class="lede">MSc student in Mechanical Engineering for Sustainability at the University of Bologna (graduating September 2027). I design parts in CAD, build them in carbon fiber, fiberglass and 3D-printed polymers, then assemble and test them. This page shows the hardware I have designed and built with student teams.</p>
+      <div class="facts">
+        <div><strong>4th</strong><span>nationally, TEKNOFEST combat UAV, CDR stage 2025</span></div>
+        <div><strong>91.87</strong><span>of 100, model satellite PDR score</span></div>
+        <div><strong>±4 G</strong><span>wing load test, no permanent deformation</span></div>
+        <div><strong>6.7 kg</strong><span>UAV, 1,700 mm span, carbon fuselage</span></div>
+      </div>
+      <div class="contact"><span><a href="mailto:oguzhankilic266@gmail.com">oguzhankilic266@gmail.com</a></span><span><a href="https://www.linkedin.com/in/o%C4%9Fuzhan-kili%C3%A7-8b3b67216/">LinkedIn</a></span><span>Forlì, Italy</span></div>
+    </div>
+    <div class="pics">
+      <figure><img src="img/fus_pads.jpg" alt="Carbon fiber UAV fuselage half held in hand, with 3D-printed TPU belly pads"><span class="tag">Carbon fuselage with TPU belly pads</span></figure>
+      <figure class="sat"><img src="img/r_iso.jpg" alt="CAD cutaway of the model satellite showing PCBs, battery and structure"><span class="tag">Model satellite, CAD</span></figure>
+    </div>
+  </div>
+</header>
+
+<section class="band" id="uav">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="meta">Mechanical team leader · ZADA team · May 2024 – Aug 2026</p><h2>Bürküt fixed-wing combat UAV</h2></div>
+      <p>I led a mechanical team of about five people from concept to flight: airframe design in SolidWorks, CNC-machined molds, the carbon fuselage, 3D-printed mounts, load and thrust tests, and flight tests. We ranked 4th in Turkey at the 2025 Critical Design Report stage.</p>
+    </div>
+    <div class="step"><div><h3>Configuration</h3><p>SolidWorks layout, main dimensions and centre of gravity.</p></div><div class="strip"><img src="img/cad.jpg" alt="CAD views of the UAV with dimensions"></div></div>
+    <div class="step"><div><h3>Mold making</h3><p>CAM programming, CNC-machined MDF molds, 6-layer varnish finish.</p></div><div class="strip"><img src="img/molds.jpg" alt="Mold making photos"></div></div>
+    <div class="step"><div><h3>Carbon fuselage layup</h3><p>245 g/m² 3K twill carbon, vacuum-assisted hand layup with epoxy: bagging, demolding, trimming.</p></div>
+      <div class="grid4">
+        <figure class="ph"><img src="img/vacbag.jpg" alt="Carbon fiber layup under vacuum bag" loading="lazy"><figcaption><b>Under vacuum</b></figcaption></figure>
+        <figure class="ph"><img src="img/vacpump.jpg" alt="Vacuum bag with pump connected" loading="lazy"><figcaption><b>Bag and pump</b></figcaption></figure>
+        <figure class="ph"><img src="img/fus_halves.jpg" alt="Trimmed carbon fuselage halves" loading="lazy"><figcaption><b>Trimmed halves</b></figcaption></figure>
+        <figure class="ph"><img src="img/uav_blue.jpg" alt="Finished UAV with carbon fuselage and blue wing" loading="lazy"><figcaption><b>Finished airframe</b></figcaption></figure>
+      </div>
+    </div>
+    <div class="step"><div><h3>Wing and build log</h3><p>Balsa-rib wing on carbon tube spars, mounted on the carbon fuselage.</p></div>
+      <div class="grid3">
+        <figure class="ph wide" style="grid-column:span 2"><img src="img/wing_skeleton.jpg" alt="Wing ribs on carbon spars mounted on the carbon fuselage" loading="lazy"><figcaption><b>Wing structure before covering</b></figcaption></figure>
+        <figure class="ph wide"><img src="img/demolded.jpg" alt="Demolded carbon fuselage on the floor before trimming" loading="lazy"><figcaption><b>Fresh out of the mold</b></figcaption></figure>
+      </div>
+      <div class="strip" style="margin-top:12px"><img src="img/build.jpg" alt="Collage of the airframe build" loading="lazy"></div>
+    </div>
+    <div class="step"><div><h3>3D-printed mounts</h3><p>Motor mounts, servo trays and tail brackets in PLA, PETG and TPU, infill tuned per load, fixed with M4/M6 bolts and epoxy.</p></div><div class="strip"><img src="img/mounts.jpg" alt="3D-printed motor mounts" loading="lazy"></div></div>
+    <div class="step"><div><h3>Avionics integration</h3><p>Team work: Pixhawk Cube Orange+, Raspberry Pi, batteries and ESCs placed around the centre of gravity.</p></div><div class="strip"><img src="img/avionics.jpg" alt="Avionics integration photos" loading="lazy"></div></div>
+    <div class="step"><div><h3>Wing load test</h3><p>Staged loading up to 20 kg (±4 G), no permanent deformation.</p></div><div class="strip"><img src="img/loadtest.jpg" alt="Wing load test curves and setup" loading="lazy"></div></div>
+    <div class="step"><div><h3>Thrust test rig</h3><p>Motor, propeller and ESC on a bench rig: about 4.5 kg static thrust at full throttle.</p></div><div class="strip"><img src="img/thrust.jpg" alt="Thrust test rig and results table" loading="lazy"></div></div>
+    <div class="step"><div><h3>Field and flight tests</h3><p>Outdoor flights with telemetry link checks, 30+ minutes endurance.</p></div><div class="strip"><img src="img/flight.jpg" alt="Flight test photos and telemetry screens" loading="lazy"></div></div>
+  </div>
+</section>
+
+<section class="band alt" id="satellite">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="meta">Mechanical subsystem · TÜRKSAT Model Satellite Competition 2024 · Team NEBULA-S</p><h2>Model satellite and carrier</h2></div>
+      <p>I did the whole mechanical subsystem on my own: primary structure, layout of the PCBs, battery and camera, the carrier and its separation mechanism, and the landing protection for the colour filters on the bottom face. Parts were 3D-printed in PLA and assembled by hand. The Preliminary Design Review scored 91.87/100.</p>
+    </div>
+    <div class="grid3">
+      <figure class="ph render"><img src="img/r_white.jpg" alt="Satellite with side panels" loading="lazy"><figcaption><b>Closed structure</b> · PLA panels around a stacked internal layout</figcaption></figure>
+      <figure class="ph render"><img src="img/r_bottom.jpg" alt="Bottom face with colour filters" loading="lazy"><figcaption><b>Imaging face</b> · four colour filters in front of the camera</figcaption></figure>
+      <figure class="ph render"><img src="img/r_front.jpg" alt="Satellite with landing legs" loading="lazy"><figcaption><b>Landing legs</b> · stiff spring-loaded feet keep the filters off the ground</figcaption></figure>
+      <figure class="ph render"><img src="img/r_side.jpg" alt="Side cutaway of the satellite" loading="lazy"><figcaption><b>Internal layout</b> · PCB deck, battery and camera stack</figcaption></figure>
+      <figure class="ph render"><img src="img/r_carrier.jpg" alt="Satellite stowed in the carrier tube" loading="lazy"><figcaption><b>Fit check</b> · stowed inside the rocket section</figcaption></figure>
+      <figure class="ph render"><img src="img/sep_mech.jpg" alt="Servo-driven rack-and-pinion separation mechanism" loading="lazy"><figcaption><b>Separation mechanism</b> · servo-driven rack and pinion</figcaption></figure>
+    </div>
+    <div class="story">
+      <div class="card"><span class="n">Design 1 · PDR</span><h3>Legs that take the landing</h3><p>The filters and camera sat on the bottom face, so touchdown could not hit them. Fixed legs with stiff spring-loaded feet absorbed the impact. We tested the landing with the hardware.</p></div>
+      <div class="card"><span class="n">Design 2 · CDR</span><h3>Lighter: antennas as landing contacts</h3><p>For the critical design I removed the legs and used the antenna tips as landing contacts, which made the satellite lighter. Next time I would film and log every test so the two designs can be compared with numbers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="rocket">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="meta">Mechanical team leader · TEKNOFEST Rocket Competition</p><h2>Mid-altitude rocket (1,200 m)</h2></div>
+      <p>I designed the payload module, bulkheads and the four fins, and prepared the fins for laser cutting and CNC. The body tubes and nose cone were made in fiberglass and epoxy by vacuum-assisted hand layup. I predicted apogee and stability with OpenRocket.</p>
+    </div>
+    <div class="grid3">
+      <figure class="ph render wide"><img src="img/rkt_payload.jpg" alt="Rocket payload module CAD" loading="lazy"><figcaption><b>Payload module</b> · electronics sled, battery pack, bulkheads</figcaption></figure>
+      <figure class="ph render wide"><img src="img/rkt_fins.jpg" alt="Fin can CAD" loading="lazy"><figcaption><b>Fin can</b> · bulkhead rings and fins, laser cut and CNC</figcaption></figure>
+      <figure class="ph render wide"><img src="img/rkt_housing.jpg" alt="Payload housing CAD" loading="lazy"><figcaption><b>Payload housing</b> · hinged lid for quick access</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="more">
+  <div class="wrap">
+    <h2 style="margin-bottom:24px">Other work</h2>
+    <div class="more">
+      <div class="card"><span class="n">TÜBİTAK 2209-A · project lead</span><h3>Toroidal propeller</h3><p>Designed propeller variants in Siemens NX, 3D-printed the blades in PLA, had the shaft and gear of the drive machined on CNC, and tested the prototype for acoustics and energy efficiency. Now comparing new variants on the SG6043 airfoil for a journal paper.</p></div>
+      <div class="card"><span class="n">HAUS Centrifuge Technologies · Oct 2023 – Mar 2024</span><h3>Welding fixture in serial production</h3><p>Worked with production engineers on process analysis, defect detection and process planning for centrifuges and pumps. Designed a welding fixture, CAD and drawings, that was adopted in serial production. Applied GD&amp;T and FMEA.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="band" id="contact">
+  <div class="wrap">
+    <div><h2>Let's build something</h2><p style="margin-top:8px">Looking for a hands-on internship or master's thesis from early 2027.</p></div>
+    <div class="contact"><span><a href="mailto:oguzhankilic266@gmail.com">oguzhankilic266@gmail.com</a></span><span><a href="https://www.linkedin.com/in/o%C4%9Fuzhan-kili%C3%A7-8b3b67216/">LinkedIn</a></span></div>
+  </div>
+</footer>
+</body>
+</html>
